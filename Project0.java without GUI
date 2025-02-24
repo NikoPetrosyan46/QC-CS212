@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int ECount, eCount;
+		String sentence;
+
+		System.out.println("Type a sentence (type 'stop' to exit):");
+		while (scanner.hasNextLine()) {
+			sentence = scanner.nextLine();
+
+			if (sentence.equalsIgnoreCase("stop")) {
+				break;
+			}
+
+			ECount = 0;
+			eCount = 0;
+
+			for (char c : sentence.toCharArray()) {
+				if (c == 'E') {
+					ECount++;
+				} else if (c == 'e') {
+					eCount++;
+				}
+			}
+
+			System.out.println("There are " + ECount + " number of E's and " + eCount + " number of e's in \"" + sentence + "\"");
+			System.out.println("\nType another sentence (type 'stop' to exit):");
+		}
+
+		scanner.close();
+		System.out.println("Program exited.");
+	}
+}
+
+
+// This is without GUI
